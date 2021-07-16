@@ -1,0 +1,16 @@
+/*importation des fichiers pour generer le fichier style.css*/
+
+@import "./utils/variables";
+
+
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./components/_buttons";
+
+@import "./layout/header";
+@import "./layout/main";
+@import "./layout/footer";
+@import "./layout/image";
+@import "./layout/lacarte";

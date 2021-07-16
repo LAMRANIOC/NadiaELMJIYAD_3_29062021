@@ -1,0 +1,21 @@
+
+body {
+    background-color: $background-color;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.footer .titre_footer {
+    font-family: "Shrikhand";
+    font-weight: 800;
+    font-size: 25px;
+    font-style: italic;
+}
+h2 {
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    font-size: 2.5rem;
+    text-align: center;
+    color:$font_color ;
+}
