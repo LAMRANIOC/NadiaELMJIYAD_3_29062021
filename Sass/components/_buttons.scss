@@ -1,0 +1,24 @@
+.btn_explorer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: $btn-height;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  border-radius: 30px;
+  background: linear-gradient(175deg,$secondary-color 10%,$primary-color 95%);
+  transition: box-shadow 150ms linear,transform 150ms linear;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0/30%);
+  
+  &:hover {
+
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+    background: linear-gradient(175deg,$secondary-color 10%,$primary-color 95%);
+    /*background: linear-gradient(to bottom right,lighten($secondary-color,5%),lighten($primary-color,5%));
+    box-shadow: 0px 0px 10px 0px #3b2e30;*/
+  }
+}
