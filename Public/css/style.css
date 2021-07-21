@@ -23,6 +23,21 @@ a {
   color: black;
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-size: 65%;
   color: black;
@@ -36,6 +51,10 @@ body {
 
 p {
   padding: 10px;
+}
+
+main {
+  border-radius: 20px;
 }
 
 body {
@@ -55,25 +74,8 @@ body {
 h2 {
   font-weight: 600;
   margin: 0 0 20px 0;
-  font-size: 2.5rem;
-  text-align: center;
+  font-size: 2.3rem;
   color: black;
-}
-
-.bouton_commander {
-  margin: 0 auto;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  color: white;
-  width: 250px;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  margin-top: 40px;
-  margin-bottom: 50px;
-}
-.bouton_commander:hover {
-  background: linear-gradient(to bottom right, #ff93e1, #a16be0);
-  box-shadow: 0px 0px 10px 0px #3b2e30;
 }
 
 .btn_explorer {
@@ -97,6 +99,27 @@ h2 {
   background: linear-gradient(175deg, #FF79DA 10%, #9356DC 95%);
   /*background: linear-gradient(to bottom right,lighten($secondary-color,5%),lighten($primary-color,5%));
   box-shadow: 0px 0px 10px 0px #3b2e30;*/
+}
+
+.btn_commander {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  border-radius: 30px;
+  background: linear-gradient(175deg, #FF79DA 10%, #9356DC 95%);
+  transition: box-shadow 150ms linear, transform 150ms linear;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.btn_commander:hover {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  border-bottom: 1px solid;
+  background: linear-gradient(175deg, #FF79DA 10%, #9356DC 95%);
 }
 
 header {
@@ -145,18 +168,16 @@ header #logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 25px 0 50px;
+  margin: 25px 25px 50px;
 }
 
 .Resto {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  width: 60%;
+  max-width: 100%;
+  height: 255px;
+  /* voir comment gerer en automatique avec fonction */
   background: white;
   border-radius: 20px;
-  border: 5px solid transparent;
   overflow: hidden;
   box-sizing: border-box;
   margin: 0 5px 20px 5px;
@@ -179,19 +200,27 @@ header #logo {
   justify-content: space-between;
   align-items: center;
 }
-.Resto__nom {
-  font-size: 18px;
-  font-weight: 700;
-}
-.Resto__lieu {
-  font-size: 15px;
-}
 
 .Resto_Description {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0;
+  padding: 10px;
+}
+
+.nom {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.lieu {
+  font-size: 15px;
+}
+
+.Anim_coeur {
+  position: relative;
+  bottom: 30%;
+  left: 85%;
 }
 
 .Resto:hover {
@@ -219,12 +248,78 @@ header #logo {
 
 .fonctionnement {
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding: 20px;
   width: auto;
   flex-wrap: wrap;
   background-color: white;
+}
+.fonctionnement .btn {
+  width: 100%;
+}
+
+.fonction {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 65px;
+  font-size: 20px;
+  background-color: #F0F0F0;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 30px;
+  margin: 15px 0px 15px 0px;
+}
+.fonction > .fc_circle {
+  display: flex;
+  background-color: #9356DC;
+  justify-content: center;
+  align-items: center;
+  margin-left: -15px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  color: white;
+}
+.fonction > .icon {
+  text-align: center;
+  width: 50px;
+  color: grey;
+}
+.fonction > .icon_violet {
+  color: #9356DC;
+  text-align: center;
+  width: 50px;
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0 50px;
+}
+
+.Entree {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #F0F0F0;
+}
+
+.reference {
+  border-radius: 20px;
+  display: flex;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 5px grey;
 }
 
 footer {
@@ -258,13 +353,48 @@ footer .footer i {
 }
 
 .img_resto {
-  height: 180px;
+  height: 100%;
   margin-top: -15px;
 }
 
 .img_carte {
   height: 250px;
   z-index: -1;
+}
+
+/* Animation dégradé de couleur Coeur */
+.coeur {
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: grey;
+  cursor: pointer;
+}
+
+.coeur_plein {
+  display: flex;
+  position: relative;
+  background: linear-gradient(to top right, #FF79DA 0%, #600045 100%);
+  pointer-events: none;
+  font-size: 30px;
+  top: -20px;
+  visibility: hidden;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes anim_coeur {
+  0% {
+    visibility: inherit;
+  }
+  100% {
+    transform: translate(0px, -20px);
+    visibility: visible;
+  }
+}
+.coeur:hover + .coeur_plein {
+  animation: anim_coeur 1s both;
 }
 
 /*# sourceMappingURL=style.css.map */

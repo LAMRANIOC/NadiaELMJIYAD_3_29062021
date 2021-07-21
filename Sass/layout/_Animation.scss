@@ -1,0 +1,35 @@
+/* Animation dégradé de couleur Coeur */
+.coeur {
+   align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: grey;
+    cursor: pointer;
+  }
+
+  .coeur_plein {
+    display: flex;
+    position: relative;
+    background: linear-gradient(to top right ,$secondary-color 0%,darken($secondary-color, 55%) 100%);
+    pointer-events: none;
+    font-size: 30px;
+    top: -20px; 
+    visibility: hidden; 
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color:transparent;
+  }
+  
+  @keyframes anim_coeur{
+    0% {
+        visibility: inherit;
+    }
+    100% {
+        transform: translate(0px,-20px);
+        visibility: visible;
+    }
+  }
+
+    .coeur:hover + .coeur_plein {
+      animation: anim_coeur 1s both;
+  }

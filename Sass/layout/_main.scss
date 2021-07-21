@@ -26,17 +26,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 25px 0 50px;
+    margin: 25px 25px 50px;
   }
   .Resto {
     display:flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    width: 60%;
+    max-width: 100%;
+    height: 255px;/* voir comment gerer en automatique avec fonction */
     background: white;
     border-radius: 20px;
-    border : 5px solid transparent;
     overflow: hidden;
     box-sizing: border-box;
     margin: 0 5px 20px 5px;
@@ -54,19 +51,26 @@
         justify-content: space-between;
         align-items: center;   
     }
-    &__nom {
-        font-size: $font_size_restaurant_name;
-        font-weight: 700;
-    }
-    &__lieu {
-        font-size: $font_size_restaurant_location;
-    }
+    
   }
   .Resto_Description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0;
+    padding: 10px;
+  }
+
+.nom {
+      font-size: 18px;
+      font-weight: 700;
+  }
+.lieu {
+      font-size: 15px;
+  }
+  .Anim_coeur{
+    position: relative;
+    bottom:30%;
+    left: 85%;
   }
   
   .Resto:hover{
@@ -90,10 +94,75 @@
 
 .fonctionnement {
     display: flex;
-    align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding: 20px;
     width: auto;
     flex-wrap: wrap;
     background-color: white;  
+    .btn{
+      width: 100%;
+      
+    }
+}
+
+.fonction {
+  display: flex;
+  align-items:center;
+  cursor: pointer;
+  width: 100%;
+  height: 65px;
+  font-size: 20px;
+  background-color: $background_color;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 30px;
+  margin: 15px 0px 15px 0px;
+
+  & > .fc_circle {
+      display: flex;
+      background-color: $primary_color;
+      justify-content: center;
+      align-items:center ;        
+      margin-left: -15px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      color: white;
+  }
+  & > .icon{
+      text-align: center;
+      width:50px;
+      color: grey;
+  }
+  & > .icon_violet{
+    color:$primary_color;
+    text-align: center;
+    width:50px;}
+}
+.Menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0 50px;
+}
+.Entree{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color:$background-color;
+}
+
+.reference{
+  border-radius: 20px;
+  display: flex;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 5px grey;
 }
