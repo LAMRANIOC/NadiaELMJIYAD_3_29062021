@@ -1,0 +1,45 @@
+div.container {
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    animation: bounce 1.5s 0.5s linear 3;
+}
+
+div > div {
+	margin: 2vw;
+    width: 3vw;
+	height: 3vw;
+    background-color: white;
+    opacity: .99;
+}
+.primaire {
+	background-color: $primary-color;
+}
+
+.secondaire {
+	background-color: $secondary-color;
+	animation-delay: 0.1s;
+}
+
+.tertiaire {
+	background-color: $tertiary-color;
+	animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+	0%, 50%, 100% {
+		transform: scale(1);
+		filter: blur(0px);
+	}
+	25% {
+		transform: scale(0.6);
+		filter: blur(3px);
+	}
+	75% {
+		filter: blur(3px);
+		transform: scale(1.4);
+	}
+}

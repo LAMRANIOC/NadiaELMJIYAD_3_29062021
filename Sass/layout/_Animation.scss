@@ -5,31 +5,112 @@
     font-weight: 500;
     color: grey;
     cursor: pointer;
+    position: absolute;
   }
 
   .coeur_plein {
-    display: flex;
-    position: relative;
+    position: absolute;
     background: linear-gradient(to top right ,$secondary-color 0%,darken($secondary-color, 55%) 100%);
     pointer-events: none;
     font-size: 30px;
-    top: -20px; 
-    visibility: hidden; 
+    transform: scale(0); 
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color:transparent;
   }
   
   @keyframes anim_coeur{
+    100% {
+        transform: scale(1);
+    }
+  }
+    .coeur:hover + .coeur_plein {
+      animation: anim_coeur 500ms 500ms both;
+  }
+/*
+  //animation check
+  .image {
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+.image:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+*/
+
+/*
+  .check{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    right: 20px;
+    top: 20px;
+    text-align: center;
+    background-color: white;
+    color: $tertiary-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }*/
+  /*voir pour demain
+
+  .btn {
+    &:hover + .box {
+        transform: scale(1) rotate(0deg);
+        span {
+            transform: translateY(0);
+        }
+    }
+}
+.box {
+    overflow: hidden;
+    transform: scale(.1) rotate(-90deg);
+    transition: transform 330ms ease-in-out;
+    span {
+        transform: translateY(250%);
+        transition: transform 280ms ease-out 50ms;
+        display: block;
+    }
+}*/
+
+/* affichage check */
+/*
+@keyframes AnimCheck {
     0% {
-        visibility: inherit;
+      transform: translateY(30px);
+      opacity: 0;
     }
     100% {
-        transform: translate(0px,-20px);
-        visibility: visible;
+      transform: translateY(-0px);
+      opacity: 1;
     }
   }
 
-    .coeur:hover + .coeur_plein {
-      animation: anim_coeur 1s both;
+  */
+  // Animation d'apparition des "cards" pour les menus
+@keyframes appear{
+  0%{
+      transform: scale(0);
   }
+  100%{
+      transform: scale(1);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+ @keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+}
