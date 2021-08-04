@@ -24,14 +24,16 @@ div.container {
 
 
 #loader div > div {
+	display: flex;
 	margin: 2vw;
     width: 5vw;
 	height: 5vw;
     opacity: .99;
 	border-radius: 50%;
-	text-align: center;
-	vertical-align: center;
 	justify-content: center;
+	align-items: center;
+	font-family:"Shrikhand" ;
+	color: white;
 }
 .primaire {
 	background-color: $primary-color;

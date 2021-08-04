@@ -142,14 +142,16 @@ div.container {
 }
 
 #loader div > div {
+  display: flex;
   margin: 2vw;
   width: 5vw;
   height: 5vw;
   opacity: 0.99;
   border-radius: 50%;
-  text-align: center;
-  vertical-align: center;
   justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand";
+  color: white;
 }
 
 .primaire {
@@ -309,7 +311,7 @@ header #logo {
 .Anim_coeur_page {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 20px;
 }
 
 .part_commander {
@@ -317,7 +319,6 @@ header #logo {
   justify-content: center;
   height: 100px;
   width: 100%;
-  padding: 40px;
 }
 
 .Resto img {
@@ -393,7 +394,7 @@ header #logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 25px 0 50px;
+  margin: 25px 0 10px;
 }
 
 .Entree, .Plat, .Dessert {
@@ -521,19 +522,12 @@ Ordinateur 992 px à 1199 px
     grid-template-rows: 50% 50%;
   }
 
-  /*
-  .Etiquette_new  {
-        left: 34%;
-        right: 0%;
-      }*/
-  .btn_fonctionnement {
-    padding: 20px;
+  .all_btn_fonction {
+    margin: 0 auto;
   }
 
-  .all_btn_fonction {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+  .fonctionnement .btn_fonctionnement {
+    width: 300px;
   }
 
   .Menu {
@@ -553,13 +547,19 @@ Ordinateur 992 px à 1199 px
     font-size: 30px;
   }
 }
-/*
-@media screen and (min-width: 991px) {
-  .Etiquette_new  {
-    left: 39%;
-    right: 0%;
+@media screen and (min-width: 1024px) {
+  .all_btn_fonction {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
   }
-}*/
+
+  .fonctionnement .btn_fonctionnement {
+    padding: 20px;
+    width: 100%;
+  }
+}
 footer {
   width: 100%;
   background-color: #353535;
