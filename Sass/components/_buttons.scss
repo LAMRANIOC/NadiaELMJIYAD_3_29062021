@@ -11,7 +11,7 @@
   background: linear-gradient(175deg,$secondary-color 10%,$primary-color 95%);
   transition: box-shadow 150ms linear,transform 150ms linear;
   box-shadow: 0 10px 20px 0 rgb(0 0 0/30%);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   &:hover {
     background: linear-gradient(to bottom right,lighten($secondary-color,5%),lighten($primary-color,5%));
@@ -27,6 +27,6 @@
   background-color: $tertiary-color;
   color: #008766;
   position: absolute;
-  right: 40px;
+  right: 10px;
   margin: 10px;
 }
