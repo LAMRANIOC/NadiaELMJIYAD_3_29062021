@@ -42,7 +42,7 @@
   .Resto {
     display:flex;
     max-width: 100%;
-    height: 255px;/* voir comment gerer en automatique avec fonction */
+    height: 230px;/* voir comment gerer en automatique avec fonction */
     background: white;
     border-radius: 20px;
     overflow: hidden;
@@ -50,11 +50,11 @@
     margin: 0 5px 20px 5px;
     box-shadow: 0 5px 16px #0000002e;
     /*transition largeur,hauteur, durée d'une seconde*/
-    -webkit-transition: all 1s ease; /* Safari et Chrome*/
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* Internet Explorer 9*/ 
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
+  //  -webkit-transition: all 1s ease; /* Safari et Chrome*/
+  //  -moz-transition: all 1s ease; /* Firefox */
+  //  -ms-transition: all 1s ease; /* Internet Explorer 9*/ 
+ //   -o-transition: all 1s ease; /* Opera */
+  //  transition: all 1s ease;
     &__note {
         display:flex;
         padding-left: $carte-padding;
@@ -93,15 +93,8 @@
     display: flex;
     justify-content: center;
     height: 100px;
-    padding: 20px;
-  }
-  
-  .Resto:hover{
-    -webkit-transform: scale(1.05); /* Safari et Chrome */
-    -moz-transform: scale(1.05); /* Firefox */
-    -ms-transform: scale(1.05); /* Internet Explorer 9 */
-    -o-transform: scale(1.05); /* Opera */
-    transform: scale(1.05);
+    width: 100%;
+    padding: 40px;
   }
   .Resto img {
     background-color: white;
@@ -109,7 +102,7 @@
     height: 180px;
     object-fit: cover;
     object-position: 0% 60%;
-    transition-duration: 0.1s;
+   // transition-duration: 0.1s;
     cursor: pointer;
     margin-top: -15px;
   }
@@ -125,7 +118,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 25px;
     width: auto;
     flex-wrap: wrap;
     background-color: white;  
@@ -181,7 +174,7 @@
   align-items: center;
   margin: 25px 0 50px;
 }
-.Entree{
+.Entree, .Plat, .Dessert{
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -195,25 +188,32 @@
   
   display: flex;
   flex-grow: 1;
+  justify-content: space-between;
   border-radius: 10px;
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 78%;
   overflow: hidden;
-  margin: 15px 5px 15px 20px;
+  margin: 5px 5px 15px 20px;
   background-color: white;
   box-shadow: 2px 2px 5px grey;
-  animation: appear 0.5s;
+  animation: appear_ref 1s ease 0ms 1 normal both;
   & > .reference_desc {
-    width: 78%;
+    display: flex;
+    flex-direction: column;
     overflow  : hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    & h3,h4{
+      overflow  : hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
   & > .reference_prix{
     font-weight: 700;
     margin: 0 10px 0 0px;
-    padding-right: 0;
+   // padding-right: 80px;
     margin-top: 30px;
     transition: padding-right 300ms linear;
   }
@@ -221,7 +221,7 @@
 
 .check{
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   opacity: 0;
   transform: rotate(0deg);
   transition: all 0.7s ease-in-out;
@@ -233,19 +233,24 @@ position:absolute;
 align-items: center;
 justify-content: center;
 height: 70px;
-width: 80px;
+width: 70px;
 opacity: 1;
 background-color: $tertiary-color;
 //25 px -70px
-margin-left: 85%;
-margin-right: 0;
+right: -70px;
 border-radius: 0 10px 10px 0;
-transition: all 0.7s ease-in-out;
+transition: all 300ms ease-in-out;
 }
 .reference:hover {
 cursor: pointer;
 }
 
+.reference:hover .reference_prix{
+  padding-right: 80px;
+    margin-top: 30px;
+    //transition: padding-right 300ms linear;
+
+}
 .reference:hover .check{
   opacity: 1;
   transform: rotate(360deg) ;
@@ -254,8 +259,9 @@ cursor: pointer;
 
 .reference:hover .Anim_reference{
   opacity: 1;
-  animation: slide-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both;
-  transition: transform 300ms linear;
+  right: 0px;
+  //animation: slide-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both;
+  transition: transform 300ms linear,right 300ms linear;
 }
 
 
@@ -266,8 +272,73 @@ cursor: pointer;
   border-radius: 25px 25px 0 0;
   margin-top: -30px;
   background-color:$background-color;
+  padding: 20px;
 }
 .New{
   display: flex;
   overflow: hidden;
 }
+
+/*  Gestion Responsive */
+/*  breaking-points :
+
+mobile < 768 px
+Tablette 768 px à 991 px
+Ordinateur 992 px à 1199 px
+
+*/
+
+@media screen and (max-width: 767px) {
+  
+  .footer{
+    & > .titre_footer{
+        font-size: 20px;
+    }    
+  }
+  }
+
+@media screen and (min-width: 768px) {
+  .all_resto{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:50% 50% ;
+  }
+  .Etiquette_new  {
+        left: 34%;
+        right: 0%;
+      }
+  
+  .btn_fonctionnement{
+    padding: 20px;
+  }
+  .all_btn_fonction{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .Menu {
+    flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+     & > .part_commander{
+        position: absolute;
+        top: 81%;
+      }
+  }
+  .footer{
+    align-items: center;
+    & > .titre_footer{
+        font-size: 30px;
+    }    
+  }
+  }
+  @media screen and (min-width: 991px) {
+    .Etiquette_new  {
+      left: 39%;
+      right: 0%;
+    }
+  }
+

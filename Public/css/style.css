@@ -11,6 +11,7 @@
 * {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -21,6 +22,29 @@ a {
   color: black;
   width: 100%;
   height: 100%;
+}
+
+h1 {
+  font-weight: 600;
+  margin: 0 0 20px 10px;
+  font-size: 2.3rem;
+  color: black;
+}
+
+h2 {
+  font-weight: 400;
+  margin: 0 0 20px 10px;
+  font-size: 2.3rem;
+  color: black;
+}
+
+.H2_souligner {
+  position: relative;
+  top: -20px;
+  margin-left: 10px;
+  width: 75px;
+  height: 4px;
+  background-color: #99E2D0;
 }
 
 h3 {
@@ -35,20 +59,6 @@ h4 {
   margin-left: 15px;
 }
 
-h2 {
-  padding: 0;
-  margin: 0;
-}
-
-.H2_souligner {
-  position: relative;
-  top: -25px;
-  left: 10px;
-  width: 75px;
-  height: 4px;
-  background-color: #99E2D0;
-}
-
 html {
   font-size: 65%;
   color: black;
@@ -58,6 +68,10 @@ body {
   box-sizing: border-box;
   background-color: white;
   margin: 0 auto;
+  background-color: #F0F0F0;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 p {
@@ -73,20 +87,6 @@ p {
   font-size: 30px;
   font-weight: 500;
   padding: 10px 15px 0px 15px;
-}
-
-body {
-  background-color: #F0F0F0;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.7;
-}
-
-h2 {
-  font-weight: 600;
-  margin: 0 0 20px 10px;
-  font-size: 2.3rem;
-  color: black;
 }
 
 .btn_explorer, .btn_commander {
@@ -122,6 +122,83 @@ h2 {
   margin: 10px;
 }
 
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: white;
+  animation: disapear 3s linear;
+  animation-fill-mode: forwards;
+}
+
+div.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  animation: bounce 1.5s 0.5s linear 3;
+}
+
+#loader div > div {
+  margin: 2vw;
+  width: 5vw;
+  height: 5vw;
+  opacity: 0.99;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+}
+
+.primaire {
+  background-color: #9356DC;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.secondaire {
+  background-color: #FF79DA;
+  animation-delay: 0.1s;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+}
+
+.tertiaire {
+  background-color: #99E2D0;
+  animation-delay: 0.2s;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bolder;
+}
+
+@keyframes bounce {
+  0%, 50%, 100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  25% {
+    transform: scale(0.6);
+    filter: blur(3px);
+  }
+  75% {
+    filter: blur(3px);
+    transform: scale(1.4);
+  }
+}
+@keyframes disapear {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
 header {
   background: white;
   position: relative;
@@ -186,7 +263,7 @@ header #logo {
 .Resto {
   display: flex;
   max-width: 100%;
-  height: 255px;
+  height: 230px;
   /* voir comment gerer en automatique avec fonction */
   background: white;
   border-radius: 20px;
@@ -195,15 +272,6 @@ header #logo {
   margin: 0 5px 20px 5px;
   box-shadow: 0 5px 16px #0000002e;
   /*transition largeur,hauteur, durée d'une seconde*/
-  -webkit-transition: all 1s ease;
-  /* Safari et Chrome*/
-  -moz-transition: all 1s ease;
-  /* Firefox */
-  -ms-transition: all 1s ease;
-  /* Internet Explorer 9*/
-  -o-transition: all 1s ease;
-  /* Opera */
-  transition: all 1s ease;
 }
 .Resto__note {
   display: flex;
@@ -246,19 +314,8 @@ header #logo {
   display: flex;
   justify-content: center;
   height: 100px;
-  padding: 20px;
-}
-
-.Resto:hover {
-  -webkit-transform: scale(1.05);
-  /* Safari et Chrome */
-  -moz-transform: scale(1.05);
-  /* Firefox */
-  -ms-transform: scale(1.05);
-  /* Internet Explorer 9 */
-  -o-transform: scale(1.05);
-  /* Opera */
-  transform: scale(1.05);
+  width: 100%;
+  padding: 40px;
 }
 
 .Resto img {
@@ -267,7 +324,6 @@ header #logo {
   height: 180px;
   object-fit: cover;
   object-position: 0% 60%;
-  transition-duration: 0.1s;
   cursor: pointer;
   margin-top: -15px;
 }
@@ -284,7 +340,7 @@ header #logo {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 25px;
   width: auto;
   flex-wrap: wrap;
   background-color: white;
@@ -339,7 +395,7 @@ header #logo {
   margin: 25px 0 50px;
 }
 
-.Entree {
+.Entree, .Plat, .Dessert {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -352,18 +408,25 @@ header #logo {
 .reference {
   display: flex;
   flex-grow: 1;
+  justify-content: space-between;
   border-radius: 10px;
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 78%;
   overflow: hidden;
-  margin: 15px 5px 15px 20px;
+  margin: 5px 5px 15px 20px;
   background-color: white;
   box-shadow: 2px 2px 5px grey;
-  animation: appear 0.5s;
+  animation: appear_ref 1s ease 0ms 1 normal both;
 }
 .reference > .reference_desc {
-  width: 78%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.reference > .reference_desc h3, .reference > .reference_desc h4 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -371,14 +434,13 @@ header #logo {
 .reference > .reference_prix {
   font-weight: 700;
   margin: 0 10px 0 0px;
-  padding-right: 0;
   margin-top: 30px;
   transition: padding-right 300ms linear;
 }
 
 .check {
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   opacity: 0;
   transform: rotate(0deg);
   transition: all 0.7s ease-in-out;
@@ -390,17 +452,21 @@ header #logo {
   align-items: center;
   justify-content: center;
   height: 70px;
-  width: 80px;
+  width: 70px;
   opacity: 1;
   background-color: #99E2D0;
-  margin-left: 85%;
-  margin-right: 0;
+  right: -70px;
   border-radius: 0 10px 10px 0;
-  transition: all 0.7s ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .reference:hover {
   cursor: pointer;
+}
+
+.reference:hover .reference_prix {
+  padding-right: 80px;
+  margin-top: 30px;
 }
 
 .reference:hover .check {
@@ -411,8 +477,8 @@ header #logo {
 
 .reference:hover .Anim_reference {
   opacity: 1;
-  animation: slide-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  transition: transform 300ms linear;
+  right: 0px;
+  transition: transform 300ms linear, right 300ms linear;
 }
 
 #Carte {
@@ -422,6 +488,7 @@ header #logo {
   border-radius: 25px 25px 0 0;
   margin-top: -30px;
   background-color: #F0F0F0;
+  padding: 20px;
 }
 
 .New {
@@ -429,6 +496,67 @@ header #logo {
   overflow: hidden;
 }
 
+/*  Gestion Responsive */
+/*  breaking-points :
+
+mobile < 768 px
+Tablette 768 px à 991 px
+Ordinateur 992 px à 1199 px
+
+*/
+@media screen and (max-width: 767px) {
+  .footer > .titre_footer {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .all_resto {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  }
+
+  .Etiquette_new {
+    left: 34%;
+    right: 0%;
+  }
+
+  .btn_fonctionnement {
+    padding: 20px;
+  }
+
+  .all_btn_fonction {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .Menu {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .Menu > .part_commander {
+    position: absolute;
+    top: 81%;
+  }
+
+  .footer {
+    align-items: center;
+  }
+  .footer > .titre_footer {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 991px) {
+  .Etiquette_new {
+    left: 39%;
+    right: 0%;
+  }
+}
 footer {
   width: 100%;
   background-color: #353535;
@@ -443,8 +571,7 @@ footer .footer {
 }
 footer .footer > .titre_footer {
   font-family: "Shrikhand";
-  font-size: 18px;
-  font-style: italic;
+  padding-bottom: 10px;
 }
 footer .footer li {
   font-size: 15px;
@@ -564,6 +691,33 @@ footer .footer i {
   }
 
   */
+/* affichage plats en décalé */
+@keyframes appear_ref {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.reference:nth-child(2) {
+  animation-delay: 0s;
+}
+
+.reference:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.reference:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.reference:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
 @keyframes appear {
   0% {
     transform: scale(0);

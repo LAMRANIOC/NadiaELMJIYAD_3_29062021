@@ -90,6 +90,39 @@
 
   */
   // Animation d'apparition des "cards" pour les menus
+/* affichage plats en décalé */
+
+@keyframes appear_ref {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-0px);
+    opacity: 1;
+  }
+}
+
+
+.reference:nth-child(2) {
+  animation-delay: 0.0s;
+}
+
+.reference:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.reference:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.reference:nth-child(6) {
+animation-delay: 0.6s;
+}
+
+
+
+
 @keyframes appear{
   0%{
       transform: scale(0);
@@ -114,3 +147,5 @@
             transform: translateX(-100px);
   }
 }
+
+
