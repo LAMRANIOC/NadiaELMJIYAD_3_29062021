@@ -26,13 +26,14 @@ div.container {
 #loader div > div {
 	display: flex;
 	margin: 2vw;
-    width: 5vw;
-	height: 5vw;
+    width: 7vw;
+	height: 7vw;
     opacity: .99;
 	border-radius: 50%;
 	justify-content: center;
 	align-items: center;
 	font-family:"Shrikhand" ;
+	font-size: 15px;
 	color: white;
 }
 .primaire {
