@@ -31,29 +31,31 @@ h1 {
 h2 {
   font-weight: 400;
   margin: 0 0 20px 10px;
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: black;
+  color: #737373;
 }
 
 .H2_souligner {
   position: relative;
   top: -20px;
   margin-left: 10px;
-  width: 75px;
+  width: 55px;
   height: 4px;
   background-color: #99E2D0;
 }
 
 h3 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 19px;
   margin-left: 15px;
 }
 
 h4 {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 15px;
   margin-left: 15px;
+  color: #333333;
 }
 
 html {
@@ -82,16 +84,27 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 500;
   padding: 10px 15px 0px 15px;
+}
+
+.titre_logo {
+  height: 35px;
+  line-height: 35px;
+  margin: 0 auto;
+  font-family: "Shrikhand";
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .btn_explorer, .btn_commander {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
+  width: 200px;
   height: 45px;
   text-align: center;
   font-size: 15px;
@@ -304,7 +317,7 @@ header #logo {
 .Anim_coeur_page {
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 45px;
 }
 
 .part_commander {
@@ -406,10 +419,10 @@ header #logo {
   justify-content: space-between;
   border-radius: 10px;
   position: relative;
-  width: 90%;
+  width: 97%;
   height: 78%;
   overflow: hidden;
-  margin: 5px 5px 15px 20px;
+  margin: 5px 5px 15px 5px;
   background-color: white;
   box-shadow: 2px 2px 5px grey;
   animation: appear_ref 1s ease 0ms 1 normal both;
@@ -428,6 +441,7 @@ header #logo {
 }
 .reference > .reference_prix {
   font-weight: 700;
+  font-size: 18px;
   margin: 0 10px 0 0px;
   margin-top: 30px;
   transition: padding-right 300ms linear;
@@ -446,11 +460,11 @@ header #logo {
   position: absolute;
   align-items: center;
   justify-content: center;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   opacity: 1;
   background-color: #99E2D0;
-  right: -70px;
+  right: -60px;
   border-radius: 0 10px 10px 0;
   transition: all 300ms ease-in-out;
 }
@@ -483,7 +497,7 @@ header #logo {
   border-radius: 25px 25px 0 0;
   margin-top: -30px;
   background-color: #F0F0F0;
-  padding: 20px;
+  padding: 5px;
 }
 
 .New {
@@ -627,67 +641,6 @@ footer .footer i {
   animation: anim_coeur 500ms 500ms both;
 }
 
-/*
-  //animation check
-  .image {
-    overflow: hidden;
-    transition-duration: 0.8s;
-    transition-property: transform;
-}
-.image:hover {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-}
-*/
-/*
-  .check{
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    right: 20px;
-    top: 20px;
-    text-align: center;
-    background-color: white;
-    color: $tertiary-color;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-  }*/
-/*voir pour demain
-
-  .btn {
-    &:hover + .box {
-        transform: scale(1) rotate(0deg);
-        span {
-            transform: translateY(0);
-        }
-    }
-}
-.box {
-    overflow: hidden;
-    transform: scale(.1) rotate(-90deg);
-    transition: transform 330ms ease-in-out;
-    span {
-        transform: translateY(250%);
-        transition: transform 280ms ease-out 50ms;
-        display: block;
-    }
-}*/
-/* affichage check */
-/*
-@keyframes AnimCheck {
-    0% {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(-0px);
-      opacity: 1;
-    }
-  }
-
-  */
-/* affichage plats en décalé */
 @keyframes appear_ref {
   0% {
     transform: translateY(30px);
